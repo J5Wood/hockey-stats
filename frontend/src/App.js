@@ -1,5 +1,11 @@
-const App = () => {
-  return <div className="app"></div>;
-};
+import { Logo } from "./Logo";
+import { NavBar } from "./NavBar";
 
-export default App;
+export const App = () => {
+  return (
+    <div className="app">
+      <NavBar />
+      <Logo />
+    </div>
+  );
+};

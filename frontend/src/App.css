@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  max-width: 100vw;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url("./assets/rink.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.app {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-bar {
+  width: 80vw;
+  background-color: black;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 30px;
+  padding: 10px;
+  border-radius: 50px;
+}
+
+.nav-link {
+  background-color: aliceblue;
+  border-radius: 30px;
+  color: black;
+  padding: 10px 30px;
+}
+
+.mini-logo {
+  color: aliceblue;
+  line-height: 2em;
+  font-size: 2em;
+  text-decoration: underline;
+}
+
+.menu {
+  height: 2em;
+  width: 2em;
+  background-image: url("./assets/menu-rounded.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.logo {
+  width: fit-content;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+}
+
+.logo h1 {
+  margin: 0;
+  line-height: 2em;
+  font-size: 2.5em;
+}
+
+.stick-clipart {
+  left: -70px;
+  top: 25px;
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background-image: url("./assets/stick.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
