@@ -7,12 +7,13 @@ import { Players } from "./Players";
 export const App = () => {
   return (
     <div className="app">
-      <NavBar />
       <Router>
         <Routes>
-          <Route exact path="/" element={<Logo />} />
-          <Route exact path="teams" element={<Teams />} />
-          <Route exact path="players" element={<Players />} />
+          <Route path="/" element={<NavBar />}>
+            <Route index element={<Logo />} />
+            <Route path="teams" element={<Teams />} />
+            <Route path="players" element={<Players />} />
+          </Route>
         </Routes>
       </Router>
     </div>
