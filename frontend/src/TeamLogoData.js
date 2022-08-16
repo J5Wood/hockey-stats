@@ -1,4 +1,4 @@
-export const teamData = importAll(
+export const teamLogoData = importAll(
   require.context("./assets/teams", false, /\.svg$/)
 );
 

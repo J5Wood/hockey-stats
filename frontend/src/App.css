@@ -45,9 +45,11 @@ body {
   border-radius: 30px;
   color: black;
   padding: 10px 30px;
+  cursor: pointer;
 }
 
 .mini-logo {
+  cursor: pointer;
   color: aliceblue;
   line-height: 2em;
   font-size: 2em;
