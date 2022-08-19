@@ -92,7 +92,7 @@ body {
   background-repeat: no-repeat;
 }
 
-.team-container {
+.teams-container {
   display: flex;
   flex-flow: row wrap;
   gap: 20px;
@@ -112,4 +112,11 @@ body {
 .team-logo:hover {
   transform: translate3d(-2px, -2px, 0);
   cursor: pointer;
+}
+
+.team-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 30px;
+  text-align: center;
 }
