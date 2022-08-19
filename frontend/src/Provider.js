@@ -8,7 +8,7 @@ export const TeamProvider = ({ children }) => {
 
   const getTeams = async () => {
     const teamData = await fetchTeamData();
-    setData(teamData);
+    setData(teamData.data);
   };
 
   useEffect(() => {

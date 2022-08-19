@@ -7,7 +7,7 @@ teams = JSON.parse(teamResponse)["teams"]
 for team in teams do
     imagePath = "#{Rails.root}/public/images/#{team["teamName"].split.join("-").downcase}.svg"
     t = Team.create(id: team["id"], name: team["teamName"], location: team["locationName"], venue: team["venue"]["name"])
-    t.image.attach(io: File.open("#{Rails.root}/public/images/#{team["teamName"].split.join("-").downcase}.svg"), filename: "devils.svg", content_type: "image/svg+xml")
+    t.image.attach(io: File.open("#{Rails.root}/public/images/#{team["teamName"].split.join("-").downcase}.svg"), filename: "#{team["teamName"].split.join("-").downcase}.svg", content_type: "image/svg+xml")
     # byebug
     for player in team["roster"]["roster"] do
         playerResponse = RestClient.get(playerUrl + player["person"]["id"].to_s)

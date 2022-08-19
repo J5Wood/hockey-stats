@@ -37,6 +37,8 @@ Rails.application.configure do
 
   Rails.application.routes.default_url_options[:host] = "localhost:3001"
 
+  config.active_storage.content_types_to_serve_as_binary.delete("image/svg+xml")
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

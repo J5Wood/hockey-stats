@@ -1,30 +1,30 @@
-import { teamLogoData } from "./TeamLogoData";
 import { useNavigate } from "react-router-dom";
-import React from "react";
+import React, { useContext } from "react";
+import { TeamContext } from "./Provider";
 
 export const Teams = () => {
   const navigate = useNavigate();
+  const teams = useContext(TeamContext).data;
 
   const handleNavigation = (e) => {
     navigate(`/teams/${e.target.dataset.teamName}`);
   };
 
   const displayTeamLogos = () => {
-    const teams = [];
-    for (let team in teamLogoData) {
-      const name = team.split(".")[0];
-      teams.push(
-        <img
-          src={teamLogoData[team]}
-          alt={`${name} logo`}
-          className="team-logo"
-          key={name}
-          data-team-name={name}
-          onClick={(e) => handleNavigation(e)}
-        />
-      );
+    if (teams) {
+      const teamElements = teams.map((team) => {
+        return (
+          <img
+            src={team.attributes.image_url}
+            alt={`${team.attributes.name} logo`}
+            className="team-logo"
+            key={team.attributes.name}
+            onClick={(e) => handleNavigation(e)}
+          />
+        );
+      });
+      return teamElements;
     }
-    return teams;
   };
 
   return (
