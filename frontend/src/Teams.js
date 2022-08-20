@@ -19,7 +19,7 @@ export const Teams = () => {
             alt={`${team.attributes.name} logo`}
             className="team-logo"
             key={team.attributes.name}
-            data-team-name={team.attributes.name}
+            data-team-name={team.attributes.name.split(" ").join("-")}
             onClick={(e) => handleNavigation(e)}
           />
         );
@@ -29,9 +29,9 @@ export const Teams = () => {
   };
 
   return (
-    <div>
+    <>
       <h2>Teams</h2>
       <div className="teams-container">{displayTeamLogos()}</div>
-    </div>
+    </>
   );
 };

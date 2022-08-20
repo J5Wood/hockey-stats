@@ -16,17 +16,14 @@ export const Team = () => {
         return team.attributes.name === formattedName;
       });
       return (
-        <div className="team-container">
+        <div
+          className="team-container"
+          style={{ backgroundImage: `url(${team.attributes.image_url})` }}
+        >
           <h2>
             {team.attributes.location} <br />
             {team.attributes.name}
           </h2>
-          <img
-            src={team.attributes.image_url}
-            alt={`${team.attributes.name} logo`}
-            className="team-logo-large"
-          />
-
           <h3>{team.attributes.venue}</h3>
         </div>
       );
@@ -35,5 +32,5 @@ export const Team = () => {
     }
   };
 
-  return <div>{renderTeam()}</div>;
+  return <>{renderTeam()}</>;
 };
