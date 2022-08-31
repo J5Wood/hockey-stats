@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_16_052006) do
+ActiveRecord::Schema.define(version: 2022_08_23_222451) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -50,6 +50,22 @@ ActiveRecord::Schema.define(version: 2022_08_16_052006) do
     t.integer "weight"
     t.string "nationality"
     t.integer "team_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "seasons", force: :cascade do |t|
+    t.integer "year"
+    t.integer "points"
+    t.integer "goals"
+    t.integer "assists"
+    t.integer "shots"
+    t.integer "blocked"
+    t.integer "plus_minus"
+    t.integer "pim"
+    t.integer "hits"
+    t.integer "ppg"
+    t.integer "player_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
