@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   # resources :players
   get '/teams', to: "teams#index"
   get '/players', to: "players#index"
+  get '/seasons', to: "seasons#index"
+
 
 end
