@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { fetchStatData } from "./actions/StatActions";
+import { fetchStatData } from "../actions/StatActions";
 
 export const StatContext = React.createContext({});
 

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { StatContext } from "./StatProvider";
+import { StatContext } from "./contextStore/StatProvider";
 import { StatsContainer } from "./StatsContainer";
 
 export const StatsPage = () => {

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useLocation } from "react-router-dom";
-import { TeamContext } from "./TeamProvider";
+import { TeamContext } from "./contextStore/TeamProvider";
 
 export const Team = () => {
   const teams = useContext(TeamContext).data;

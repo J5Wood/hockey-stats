@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { fetchTeamData } from "./actions/TeamActions";
+import { fetchTeamData } from "../actions/TeamActions";
 
 export const TeamContext = React.createContext({});
 
