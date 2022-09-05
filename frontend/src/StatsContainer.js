@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StatsDisplay } from "./StatsDisplay";
+import { StatDisplay } from "./StatDisplay";
 
 export const StatsContainer = ({ seasonData }) => {
   const [sortStat, setSortStat] = useState("goals");
@@ -23,61 +23,46 @@ export const StatsContainer = ({ seasonData }) => {
     });
   };
 
+  const renderSortedPlayers = () => {
+    const players = sortedPlayers(sortStat);
+    if (players) {
+      return players.map((player, index) => (
+        <StatDisplay player={player} key={index} />
+      ));
+    }
+  };
+
   return (
-    <table className="player-stats">
-      <thead>
-        <tr>
-          <th></th>
-          <th>
-            <button onClick={changeSortStat} value="goals">
-              GOALS
-            </button>
-          </th>
-          <th>
-            <button onClick={changeSortStat} value="assists">
-              ASSISTS
-            </button>
-          </th>
-          <th>
-            <button onClick={changeSortStat} value="points">
-              POINTS
-            </button>
-          </th>
-          <th>
-            <button onClick={changeSortStat} value="ppg">
-              PPG
-            </button>
-          </th>
-          <th>
-            <button onClick={changeSortStat} value="shots">
-              SHOTS
-            </button>
-          </th>
-          <th>
-            <button onClick={changeSortStat} value="plus_minus">
-              + / -
-            </button>
-          </th>
-          <th>
-            <button onClick={changeSortStat} value="blocked">
-              BLOCKED
-            </button>
-          </th>
-          <th>
-            <button onClick={changeSortStat} value="hits">
-              HITS
-            </button>
-          </th>
-          <th>
-            <button onClick={changeSortStat} value="pim">
-              PIM
-            </button>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <StatsDisplay players={sortedPlayers(sortStat)} />
-      </tbody>
-    </table>
+    <div className="player-stats">
+      <span className="spacer" />
+      <button onClick={changeSortStat} value="goals">
+        GOALS
+      </button>
+      <button onClick={changeSortStat} value="assists">
+        ASSISTS
+      </button>
+      <button onClick={changeSortStat} value="points">
+        POINTS
+      </button>
+      <button onClick={changeSortStat} value="ppg">
+        PPG
+      </button>
+      <button onClick={changeSortStat} value="shots">
+        SHOTS
+      </button>
+      <button onClick={changeSortStat} value="plus_minus">
+        + / -
+      </button>
+      <button onClick={changeSortStat} value="blocked">
+        BLOCKED
+      </button>
+      <button onClick={changeSortStat} value="hits">
+        HITS
+      </button>
+      <button onClick={changeSortStat} value="pim">
+        PIM
+      </button>
+      {renderSortedPlayers()}
+    </div>
   );
 };
