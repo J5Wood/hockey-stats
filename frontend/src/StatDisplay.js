@@ -8,15 +8,33 @@ export const StatDisplay = ({ player }) => {
         <p>{player.attributes.player.position}</p>
         <p> {player.attributes.player.shoots}</p>
       </span>
-      <p>{player.attributes.goals}</p>
-      <p>{player.attributes.assists}</p>
-      <p>{player.attributes.points}</p>
-      <p>{player.attributes.ppg}</p>
-      <p>{player.attributes.shots}</p>
-      <p>{player.attributes.plus_minus}</p>
-      <p>{player.attributes.blocked}</p>
-      <p>{player.attributes.hits}</p>
-      <p>{player.attributes.pim}</p>
+      <span>
+        <p>{player.attributes.goals}</p>
+      </span>
+      <span>
+        <p>{player.attributes.assists}</p>
+      </span>
+      <span>
+        <p>{player.attributes.points}</p>
+      </span>
+      <span>
+        <p>{player.attributes.ppg}</p>
+      </span>
+      <span>
+        <p>{player.attributes.shots}</p>
+      </span>
+      <span>
+        <p>{player.attributes.plus_minus}</p>
+      </span>
+      <span>
+        <p>{player.attributes.blocked}</p>
+      </span>
+      <span>
+        <p>{player.attributes.hits}</p>
+      </span>
+      <span>
+        <p>{player.attributes.pim}</p>
+      </span>
     </>
   );
 };
