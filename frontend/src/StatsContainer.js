@@ -24,7 +24,7 @@ export const StatsContainer = ({ seasonData }) => {
   };
 
   return (
-    <table>
+    <table className="player-stats">
       <thead>
         <tr>
           <th></th>

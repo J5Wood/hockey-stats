@@ -6,7 +6,11 @@ export const StatsDisplay = ({ players }) => {
       return players.map((player, index) => {
         return (
           <tr key={index}>
-            <td>{player.attributes.player.name}</td>
+            <td className="player-stat-header">
+              <h4>{player.attributes.player.name}</h4>
+              <p>{player.attributes.player.position}</p>
+              <p> {player.attributes.player.shoots}</p>
+            </td>
             <td>{player.attributes.goals}</td>
             <td>{player.attributes.assists}</td>
             <td>{player.attributes.points}</td>

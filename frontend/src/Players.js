@@ -15,7 +15,7 @@ export const Players = () => {
 
   return (
     <>
-      <div>Players</div>
+      <div>STATS</div>
       {renderStats()}
     </>
   );
