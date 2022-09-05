@@ -29,8 +29,8 @@ for team in teams do
                     # newSeason = Season.new(year: season["season"], points: stats["points"] goals: assists: shots: blocked: plus_minus: pim: hits: ppg:)
                     # byebug
                 else
-                    stats = season["stat"]
-                    pl.seasons.create(year: season["season"], points: stats["points"], goals: stats["goals"], assists: stats["assists"], shots: stats["shots"], blocked: stats["blocked"], plus_minus: stats["plusMinus"], pim: stats["pim"], hits: stats["hits"], ppg: stats["powerPlayGoals"])
+                    statsList = season["stat"]
+                    pl.stats.create(year: season["season"], points: statsList["points"], goals: statsList["goals"], assists: statsList["assists"], shots: statsList["shots"], blocked: statsList["blocked"], plus_minus: statsList["plusMinus"], pim: statsList["pim"], hits: statsList["hits"], ppg: statsList["powerPlayGoals"])
 
                 end
             end

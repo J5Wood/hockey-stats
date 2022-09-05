@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 2022_08_23_222451) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "seasons", force: :cascade do |t|
+  create_table "stats", force: :cascade do |t|
     t.integer "year"
     t.integer "points"
     t.integer "goals"

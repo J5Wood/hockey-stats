@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { SeasonContext } from "./SeasonProvider";
+import { StatContext } from "./StatProvider";
 import { StatsContainer } from "./StatsContainer";
 
-export const Players = () => {
-  const season = useContext(SeasonContext).data;
+export const StatsPage = () => {
+  const season = useContext(StatContext).data;
 
   const renderStats = () => {
     if (season) {

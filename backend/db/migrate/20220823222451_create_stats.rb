@@ -1,6 +1,6 @@
-class CreateStatBlocks < ActiveRecord::Migration[6.1]
+class CreateStats < ActiveRecord::Migration[6.1]
   def change
-    create_table :seasons do |t|
+    create_table :stats do |t|
       t.integer :year
       t.integer :points
       t.integer :goals

@@ -1,8 +1,8 @@
 import React from "react";
 import { TeamProvider } from "./TeamProvider";
-import { SeasonProvider } from "./SeasonProvider";
+import { StatProvider } from "./StatProvider";
 
-const providers = [TeamProvider, SeasonProvider];
+const providers = [TeamProvider, StatProvider];
 
 const combineComponents = (...components) => {
   return components.reduce(

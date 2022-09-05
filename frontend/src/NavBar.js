@@ -11,8 +11,8 @@ export const NavBar = () => {
         <span onClick={() => navigate("/teams")} className="nav-link">
           Teams
         </span>
-        <span onClick={() => navigate("/players")} className="nav-link">
-          Players
+        <span onClick={() => navigate("/stats")} className="nav-link">
+          Stats
         </span>
         <span className="menu"></span>
       </div>
