@@ -4,8 +4,8 @@ import { Logo } from "./Logo";
 import { Teams } from "./Teams";
 import { StatsPage } from "./StatsPage";
 import { Team } from "./Team";
-import { PlayersPage } from "./PlayersPage";
 import { PlayerPage } from "./PlayerPage";
+import { PlayersContainer } from "./PlayersContainer";
 
 export const App = () => {
   return (
@@ -17,7 +17,7 @@ export const App = () => {
             <Route path="teams" element={<Teams />} />
             <Route path="teams/:team_id" element={<Team />} />
             <Route path="stats" element={<StatsPage />} />
-            <Route path="players" element={<PlayersPage />} />
+            <Route path="players" element={<PlayersContainer />} />
             <Route path="players/:player_id" element={<PlayerPage />} />
           </Route>
         </Routes>
