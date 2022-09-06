@@ -171,16 +171,22 @@ h3 {
   justify-self: center;
   padding: 0;
   margin: 5px;
+  cursor: pointer;
 }
 
 .player-stats .player-stat-header {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  border-top: 2px solid black;
   border-left: none;
   border-bottom: none;
   border-right: none;
+}
+
+.player-stats .player-stat-header a {
+  color: black;
+  text-decoration: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  cursor: pointer;
 }
 
 .player-stat-header h4 {
@@ -189,4 +195,35 @@ h3 {
   width: 100%;
   font-weight: 500;
   font-size: large;
+}
+
+.season-data {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 5px;
+}
+
+.season-data p {
+  text-align: center;
+  background: radial-gradient(
+    circle farthest-corner at center,
+    rgba(240, 248, 255, 0.7) 50%,
+    rgba(0, 0, 0, 0.2) 180%
+  );
+}
+
+.season-data span {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(
+    circle farthest-corner at center,
+    rgba(240, 248, 255, 0.7) 50%,
+    rgba(0, 0, 0, 0.2) 180%
+  );
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 }

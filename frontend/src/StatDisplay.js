@@ -1,40 +1,23 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { StatAttributes } from "./StatAttributes";
 
 export const StatDisplay = ({ player }) => {
+  const formattedUrl = `/players/${player.attributes.player.name
+    .split(" ")
+    .join("-")}`;
+
   return (
     <>
       <span className="player-stat-header">
-        <h4>{player.attributes.player.name}</h4>
-        <p>{player.attributes.player.position}</p>
-        <p> {player.attributes.player.shoots}</p>
+        <Link to={formattedUrl}>
+          <h4>{player.attributes.player.name}</h4>
+          <p>{player.attributes.player.position}</p>
+          <p> {player.attributes.player.shoots}</p>
+        </Link>
       </span>
-      <span>
-        <p>{player.attributes.goals}</p>
-      </span>
-      <span>
-        <p>{player.attributes.assists}</p>
-      </span>
-      <span>
-        <p>{player.attributes.points}</p>
-      </span>
-      <span>
-        <p>{player.attributes.ppg}</p>
-      </span>
-      <span>
-        <p>{player.attributes.shots}</p>
-      </span>
-      <span>
-        <p>{player.attributes.plus_minus}</p>
-      </span>
-      <span>
-        <p>{player.attributes.blocked}</p>
-      </span>
-      <span>
-        <p>{player.attributes.hits}</p>
-      </span>
-      <span>
-        <p>{player.attributes.pim}</p>
-      </span>
+
+      <StatAttributes attributes={player.attributes} />
     </>
   );
 };
