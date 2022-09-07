@@ -30,7 +30,7 @@ export const Teams = () => {
 
   return (
     <>
-      <h2>Teams</h2>
+      <h3>Teams</h3>
       <div className="teams-container">{displayTeamLogos()}</div>
     </>
   );

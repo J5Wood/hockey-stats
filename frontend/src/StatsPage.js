@@ -15,7 +15,7 @@ export const StatsPage = () => {
 
   return (
     <>
-      <div>STATS</div>
+      <h3>Stats</h3>
       {renderStats()}
     </>
   );

@@ -13,7 +13,9 @@ export const PlayersContainer = () => {
   const renderPlayersDisplay = () => {
     if (season) {
       const players = season.filter((player) =>
-        player.attributes.player.name.includes(queryParam)
+        player.attributes.player.name
+          .toLowerCase()
+          .includes(queryParam.toLowerCase())
       );
       return players.map(({ attributes }, index) => {
         return <PlayerDisplay playerData={attributes} key={index} />;
@@ -23,6 +25,7 @@ export const PlayersContainer = () => {
 
   return (
     <div className="players-container">
+      <h3>Players</h3>
       <label htmlFor="search">Search</label>
       <input id="search" onChange={(e) => handleSearchInput(e)} />
       <div className="players-display">
