@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import React, { useContext } from "react";
 import { TeamContext } from "./contextStore/TeamProvider";
 
-export const Teams = () => {
+export const TeamsPage = () => {
   const navigate = useNavigate();
   const teams = useContext(TeamContext).data;
 

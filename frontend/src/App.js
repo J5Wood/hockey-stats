@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { NavBar } from "./NavBar";
 import { Logo } from "./Logo";
-import { Teams } from "./Teams";
+import { TeamsPage } from "./TeamsPage";
 import { StatsPage } from "./StatsPage";
 import { Team } from "./Team";
 import { PlayerPage } from "./PlayerPage";
@@ -14,7 +14,7 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<NavBar />}>
             <Route index element={<Logo />} />
-            <Route path="teams" element={<Teams />} />
+            <Route path="teams" element={<TeamsPage />} />
             <Route path="teams/:team_id" element={<Team />} />
             <Route path="stats" element={<StatsPage />} />
             <Route path="players" element={<PlayersContainer />} />

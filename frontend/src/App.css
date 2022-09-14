@@ -205,7 +205,23 @@ h3 {
   font-size: large;
 }
 
+.player-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  padding: 40px;
+}
+
+.player-container h4 {
+  grid-column: 1 / 3;
+}
+
+.grid-end {
+  justify-self: end;
+}
+
 .season-data {
+  grid-column: 1/3;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 5px;
