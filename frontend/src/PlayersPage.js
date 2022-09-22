@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { StatContext } from "./contextStore/StatProvider";
 import { PlayerDisplay } from "./PlayerDisplay";
 
-export const PlayersContainer = () => {
+export const PlayersPage = () => {
   const season = useContext(StatContext).data;
   const [queryParam, setQueryParam] = useState("");
 

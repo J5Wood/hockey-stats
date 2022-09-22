@@ -4,7 +4,7 @@ import { TeamContext } from "./contextStore/TeamProvider";
 import { StatContext } from "./contextStore/StatProvider";
 import { StatsContainer } from "./StatsContainer";
 
-export const Team = () => {
+export const TeamPage = () => {
   const teams = useContext(TeamContext).data;
   const teamName = useLocation().pathname.split("/")[2];
 
