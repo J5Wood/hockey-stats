@@ -11,6 +11,7 @@ export const StatsContainer = ({ seasonData }) => {
   const sortedPlayers = (stat) => {
     // Sorting players should be its own component.
     // Need to add follow up checks in place of a tie
+    debugger;
     return seasonData.sort((a, b) => {
       if (a.attributes[stat] > b.attributes[stat]) {
         return -1;
