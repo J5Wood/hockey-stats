@@ -1,50 +1,50 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { fetchStatData } from "./api/StatActions";
-// import { StatContext } from "./contextStore/StatProvider";
 import { StatsContainer } from "./StatsContainer";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 
 export const StatsPage = () => {
-  // const season = useContext(StatContext).data;
-  // console.log("season one", season);
-
-  const queryClient = useQueryClient();
   const [year, setYear] = useState("20212022");
   const currentSeason = useQuery(
     ["season", year],
     async () => await fetchStatData(year)
   );
 
-  // const fetchSeasonData = async (year) => {
-  //   debugger;
-  //   const response = await fetchStatData(year);
+  const renderOptions = () => {
+    const options = [];
+    for (let i = 2022; i > 2004; i--) {
+      if (i.toString() === year.slice(4)) {
+        options.push(
+          <option value={"current"} key={i}>
+            {i - 1} - {i}
+          </option>
+        );
+      } else {
+        options.push(
+          <option key={i}>
+            {i - 1} - {i}
+          </option>
+        );
+      }
+    }
+    return options;
+  };
 
-  //   return response;
-  // };
-  // debugger;
-  // const addSeason = useContext(StatContext).dispatch;
-
-  // const handleClick = () => {
-  //   const action = {
-  //     type: "ADD_SEASON",
-  //     payload: "20202021",
-  //   };
-  //   addSeason(action);
-  // };
-  // const addSeason = useContext(StatContext).dispatch;
-  // console.log(addSeason);
-  // addSeason("20202021");
-  // console.log("season one", season)
-
-  // grab season grab players from that season send to container
+  const handleYearChange = (e) => {
+    setYear(e.target.value.split(" - ").join(""));
+  };
 
   const renderStats = () => {
     if (currentSeason.isFetched) {
-      // debugger;
-      // console.log("here");
       return (
         <>
-          {/* <button onClick={handleClick}>PRESS ME</button> */}
+          <select
+            id="year"
+            defaultValue={"current"}
+            onChange={handleYearChange}
+          >
+            {renderOptions()}
+          </select>
           <StatsContainer seasonData={currentSeason.data.data} />;
         </>
       );

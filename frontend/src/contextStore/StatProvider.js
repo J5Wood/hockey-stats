@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 import { fetchStatData } from "../api/StatActions";
 
 export const StatContext = React.createContext({});
