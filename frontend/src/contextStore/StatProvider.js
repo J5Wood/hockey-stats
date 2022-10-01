@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useReducer } from "react";
-import { fetchStatData } from "../actions/StatActions";
+import { fetchStatData } from "../api/StatActions";
 
 export const StatContext = React.createContext({});
 
@@ -16,10 +16,10 @@ export const StatProvider = ({ children }) => {
     switch (action.type) {
       case "ADD_YEAR":
         const newDataObj = { ...state };
-        debugger;
+        // debugger;
         const newSeason = await getSeason(action.payload);
         newDataObj[action.payload] = newSeason;
-        debugger;
+        // debugger;
         return newDataObj;
       default:
         return state;

@@ -1,20 +1,36 @@
-import { useContext } from "react";
-import { StatContext } from "./contextStore/StatProvider";
+import { useContext, useState } from "react";
+import { fetchStatData } from "./api/StatActions";
+// import { StatContext } from "./contextStore/StatProvider";
 import { StatsContainer } from "./StatsContainer";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 export const StatsPage = () => {
-  const season = useContext(StatContext).data;
-  console.log("season one", season);
+  // const season = useContext(StatContext).data;
+  // console.log("season one", season);
 
-  const addSeason = useContext(StatContext).dispatch;
+  const queryClient = useQueryClient();
+  const [year, setYear] = useState("20212022");
+  const currentSeason = useQuery(
+    ["season", year],
+    async () => await fetchStatData(year)
+  );
 
-  const handleClick = () => {
-    const action = {
-      type: "ADD_SEASON",
-      payload: "20202021",
-    };
-    addSeason(action);
-  };
+  // const fetchSeasonData = async (year) => {
+  //   debugger;
+  //   const response = await fetchStatData(year);
+
+  //   return response;
+  // };
+  // debugger;
+  // const addSeason = useContext(StatContext).dispatch;
+
+  // const handleClick = () => {
+  //   const action = {
+  //     type: "ADD_SEASON",
+  //     payload: "20202021",
+  //   };
+  //   addSeason(action);
+  // };
   // const addSeason = useContext(StatContext).dispatch;
   // console.log(addSeason);
   // addSeason("20202021");
@@ -23,13 +39,13 @@ export const StatsPage = () => {
   // grab season grab players from that season send to container
 
   const renderStats = () => {
-    if (season) {
-      debugger;
-      console.log("here");
+    if (currentSeason.isFetched) {
+      // debugger;
+      // console.log("here");
       return (
         <>
-          <button onClick={handleClick}>PRESS ME</button>
-          <StatsContainer seasonData={season} />;
+          {/* <button onClick={handleClick}>PRESS ME</button> */}
+          <StatsContainer seasonData={currentSeason.data.data} />;
         </>
       );
     } else {
