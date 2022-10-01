@@ -1,18 +1,19 @@
 import { useNavigate } from "react-router-dom";
-import React, { useContext } from "react";
-import { TeamContext } from "./contextStore/TeamProvider";
+import React from "react";
+import { fetchTeamData } from "./api/TeamActions";
+import { useQuery } from "@tanstack/react-query";
 
 export const TeamsPage = () => {
   const navigate = useNavigate();
-  const teams = useContext(TeamContext).data;
+  const teams = useQuery(["teams"], () => fetchTeamData());
 
   const handleNavigation = (e) => {
     navigate(`/teams/${e.target.dataset.teamName}`);
   };
 
   const displayTeamLogos = () => {
-    if (teams) {
-      const teamElements = teams.map((team) => {
+    if (teams.isFetched) {
+      const teamElements = teams.data.data.map((team) => {
         return (
           <img
             src={team.attributes.image_url}
