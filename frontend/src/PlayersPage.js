@@ -1,9 +1,39 @@
-import React, { useContext, useState } from "react";
-import { StatContext } from "./contextStore/StatProvider";
+import React, { useState } from "react";
 import { PlayerDisplay } from "./PlayerDisplay";
+import { fetchStatData } from "./api/StatActions";
+import { useQuery } from "@tanstack/react-query";
 
 export const PlayersPage = () => {
-  const season = useContext(StatContext).data;
+  const [year, setYear] = useState("20212022");
+  const season = useQuery(
+    ["season", year],
+    async () => await fetchStatData(year)
+  );
+
+  const renderOptions = () => {
+    const options = [];
+    for (let i = 2022; i > 2004; i--) {
+      if (i.toString() === year.slice(4)) {
+        options.push(
+          <option value={"current"} key={i}>
+            {i - 1} - {i}
+          </option>
+        );
+      } else {
+        options.push(
+          <option key={i}>
+            {i - 1} - {i}
+          </option>
+        );
+      }
+    }
+    return options;
+  };
+
+  const handleYearChange = (e) => {
+    setYear(e.target.value.split(" - ").join(""));
+  };
+
   const [queryParam, setQueryParam] = useState("");
 
   const handleSearchInput = (e) => {
@@ -11,8 +41,8 @@ export const PlayersPage = () => {
   };
 
   const renderPlayersDisplay = () => {
-    if (season) {
-      const players = season.filter((player) =>
+    if (season.isFetched) {
+      const players = season.data.data.filter((player) =>
         player.attributes.player.name
           .toLowerCase()
           .includes(queryParam.toLowerCase())
@@ -26,6 +56,9 @@ export const PlayersPage = () => {
   return (
     <div className="players-container">
       <h3>Players</h3>
+      <select id="year" defaultValue={"current"} onChange={handleYearChange}>
+        {renderOptions()}
+      </select>
       <label htmlFor="search">Search</label>
       <input id="search" onChange={(e) => handleSearchInput(e)} />
       <div className="players-display">
