@@ -1,8 +1,22 @@
 import React from "react";
 
 export const StatAttributes = ({ attributes }) => {
+  const renderYear = () => {
+    if (attributes.year) {
+      const year = attributes.year.toString();
+      return (
+        <span className="stats-year-data">
+          <p>{year.slice(0, 4)}</p>
+          <p>-</p>
+          <p>{year.slice(4)}</p>
+        </span>
+      );
+    }
+  };
+
   return (
     <>
+      {renderYear()}
       <span>
         <p>{attributes.goals}</p>
       </span>

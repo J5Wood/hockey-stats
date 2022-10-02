@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-// import { TeamContext } from "./contextStore/TeamProvider";
-// import { StatContext } from "./contextStore/StatProvider";
 import { StatsContainer } from "./StatsContainer";
 import { useQuery } from "@tanstack/react-query";
 import { fetchTeamData } from "./api/TeamActions";
