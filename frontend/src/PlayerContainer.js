@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { StatAttributes } from "./StatAttributes";
 
 export const PlayerContainer = ({ playerData }) => {
+  // debugger;
   const player = playerData.attributes;
   const stats = player.stats;
   const team = player.team;
@@ -29,7 +30,7 @@ export const PlayerContainer = ({ playerData }) => {
         data-team-name={team.name.split(" ").join("-")}
         onClick={(e) => handleNavigation(e)}
       />
-      <div className="season-data">
+      <div className="season-data add-year-column">
         <p>YEAR</p>
         <p>GOALS</p>
         <p>ASSISTS</p>

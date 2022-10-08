@@ -9,6 +9,7 @@ export const PlayerPage = () => {
   const player = useQuery(["player", name], () => fetchPlayerData(name));
 
   const renderPlayer = () => {
+    // debugger;
     if (player.isFetched) {
       return <PlayerContainer playerData={player.data[0]} />;
     } else {

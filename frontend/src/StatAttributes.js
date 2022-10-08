@@ -2,7 +2,8 @@ import React from "react";
 
 export const StatAttributes = ({ attributes }) => {
   const renderYear = () => {
-    if (attributes.year) {
+    // debugger;
+    if (window.location.pathname.split("/")[1] === "players") {
       const year = attributes.year.toString();
       return (
         <span className="stats-year-data">
