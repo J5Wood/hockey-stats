@@ -7,8 +7,12 @@ class PlayersController < ApplicationController
 
     private
 
+    def format_name(name)
+        name.split("_").join(" ")
+    end
+
     def player_params
-        params.require("id").titleize
+        format_name(params.require("id"))
     end
 
 

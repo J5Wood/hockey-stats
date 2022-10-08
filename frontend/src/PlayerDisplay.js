@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const PlayerDisplay = ({ playerData }) => {
   const renderPlayerDisplay = () => {
-    const formattedName = playerData.player.name.split(" ").join("-");
+    const formattedName = playerData.player.name.split(" ").join("_");
     return (
       <>
         <Link to={`${formattedName}`}>

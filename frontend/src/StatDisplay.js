@@ -5,7 +5,7 @@ import { StatAttributes } from "./StatAttributes";
 export const StatDisplay = ({ player }) => {
   const formattedUrl = `/players/${player.attributes.player.name
     .split(" ")
-    .join("-")}`;
+    .join("_")}`;
 
   return (
     <>
