@@ -10,7 +10,7 @@ export const TeamPage = () => {
   const teamName = useLocation().pathname.split("/")[2];
 
   const [year, setYear] = useState("20212022");
-  const stats = useQuery(
+  const currentSeason = useQuery(
     ["season", year],
     async () => await fetchStatData(year)
   );
@@ -40,7 +40,7 @@ export const TeamPage = () => {
   };
 
   const renderTeam = () => {
-    if (teams.isFetched && stats.isFetched) {
+    if (teams.isFetched && currentSeason.isFetched) {
       const formattedName = teamName
         .split("-")
         .map((name) => name[0].toUpperCase() + name.slice(1))
@@ -48,7 +48,7 @@ export const TeamPage = () => {
       const team = teams.data.data.find((team) => {
         return team.attributes.name === formattedName;
       });
-      const players = stats.data.data.filter(
+      const players = currentSeason.data.data.filter(
         (player) => player.attributes.player.team_id === parseInt(team.id)
       );
       return (
