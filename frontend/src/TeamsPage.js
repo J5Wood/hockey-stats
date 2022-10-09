@@ -11,7 +11,7 @@ export const TeamsPage = () => {
     navigate(`/teams/${e.target.dataset.teamName}`);
   };
 
-  const displayTeamLogos = () => {
+  const displayTeams = () => {
     if (teams.isFetched) {
       const teamElements = teams.data.data.map((team) => {
         return (
@@ -32,7 +32,7 @@ export const TeamsPage = () => {
   return (
     <>
       <h3>Teams</h3>
-      <div className="teams-container">{displayTeamLogos()}</div>
+      <div className="teams-container">{displayTeams()}</div>
     </>
   );
 };

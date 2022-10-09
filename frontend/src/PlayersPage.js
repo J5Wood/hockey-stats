@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { PlayerDisplay } from "./PlayerDisplay";
+import { PlayersDisplay } from "./PlayersDisplay";
 import { fetchStatData } from "./api/StatActions";
 import { useQuery } from "@tanstack/react-query";
 
@@ -48,7 +48,7 @@ export const PlayersPage = () => {
           .includes(queryParam.toLowerCase())
       );
       return players.map(({ attributes }, index) => {
-        return <PlayerDisplay playerData={attributes} key={index} />;
+        return <PlayersDisplay playerData={attributes} key={index} />;
       });
     }
   };

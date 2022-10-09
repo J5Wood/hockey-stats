@@ -1,22 +1,45 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { StatRow } from "./StatRow";
 
 export const PlayerDisplay = ({ playerData }) => {
-  const renderPlayerDisplay = () => {
-    const formattedName = playerData.player.name.split(" ").join("_");
-    return (
-      <>
-        <Link to={`${formattedName}`}>
-          <h4>{playerData.player.name}</h4>
-        </Link>
-        <p>{playerData.player.position}</p>
-        <p>{playerData.player.shoots}</p>
-        <p>{playerData.goals}</p>
-        <p>{playerData.assists}</p>
-        <p>{playerData.points}</p>
-      </>
-    );
+  const player = playerData.attributes;
+  const stats = player.stats.reverse();
+  const team = player.team;
+  const navigate = useNavigate();
+
+  const handleNavigation = (e) => {
+    navigate(`/teams/${e.target.dataset.teamName}`);
   };
 
-  return <>{renderPlayerDisplay()}</>;
+  const renderStats = (stats) => {
+    return stats.map((stat) => <StatRow attributes={stat} key={stat.id} />);
+  };
+
+  return (
+    <div className="player-container">
+      <h3>{player.name}</h3>
+      <img
+        src={player.team_img_url}
+        alt={`${team.name} logo`}
+        className="team-logo grid-end"
+        key={team.name}
+        data-team-name={team.name.split(" ").join("-")}
+        onClick={(e) => handleNavigation(e)}
+      />
+      <div className="season-data add-year-column">
+        <p>YEAR</p>
+        <p>GOALS</p>
+        <p>ASSISTS</p>
+        <p>POINTS</p>
+        <p>PPG</p>
+        <p>SHOTS</p>
+        <p>+ / -</p>
+        <p>BLOCKED</p>
+        <p>HITS</p>
+        <p>PIM</p>
+        {renderStats(stats)}
+      </div>
+    </div>
+  );
 };

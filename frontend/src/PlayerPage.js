@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { PlayerContainer } from "./PlayerContainer";
+import { PlayerDisplay } from "./PlayerDisplay";
 import { useQuery } from "@tanstack/react-query";
 import { fetchPlayerData } from "./api/PlayerActions";
 
@@ -9,9 +9,8 @@ export const PlayerPage = () => {
   const player = useQuery(["player", name], () => fetchPlayerData(name));
 
   const renderPlayer = () => {
-    // debugger;
     if (player.isFetched) {
-      return <PlayerContainer playerData={player.data[0]} />;
+      return <PlayerDisplay playerData={player.data[0]} />;
     } else {
       return <h3>...LOADING</h3>;
     }
