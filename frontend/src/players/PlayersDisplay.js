@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const PlayerDisplay = ({ playerData }) => {
-  const renderPlayerDisplay = () => {
-    const formattedName = playerData.player.name.split(" ").join("-");
+export const PlayersDisplay = ({ playerData }) => {
+  const renderPlayersDisplay = () => {
+    const formattedName = playerData.player.name.split(" ").join("_");
     return (
       <>
         <Link to={`${formattedName}`}>
@@ -18,5 +18,5 @@ export const PlayerDisplay = ({ playerData }) => {
     );
   };
 
-  return <>{renderPlayerDisplay()}</>;
+  return <>{renderPlayersDisplay()}</>;
 };

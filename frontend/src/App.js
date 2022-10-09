@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { NavBar } from "./NavBar";
 import { Logo } from "./Logo";
-import { TeamsPage } from "./TeamsPage";
-import { StatsPage } from "./StatsPage";
-import { TeamPage } from "./TeamPage";
-import { PlayerPage } from "./PlayerPage";
-import { PlayersPage } from "./PlayersPage";
+import { TeamsPage } from "./teams/TeamsPage";
+import { StatsPage } from "./stats/StatsPage";
+import { TeamPage } from "./team/TeamPage";
+import { PlayerPage } from "./player/PlayerPage";
+import { PlayersPage } from "./players/PlayersPage";
 
 export const App = () => {
   return (

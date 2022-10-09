@@ -1,8 +1,22 @@
 import React from "react";
 
-export const StatAttributes = ({ attributes }) => {
+export const StatRow = ({ attributes }) => {
+  const renderYear = () => {
+    if (window.location.pathname.split("/")[1] === "players") {
+      const year = attributes.year.toString();
+      return (
+        <span className="stats-year-data">
+          <p>'{year.slice(2, 4)}</p>
+          <p>-</p>
+          <p>'{year.slice(6)}</p>
+        </span>
+      );
+    }
+  };
+
   return (
     <>
+      {renderYear()}
       <span>
         <p>{attributes.goals}</p>
       </span>

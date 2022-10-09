@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { StatAttributes } from "./StatAttributes";
+import { StatRow } from "./StatRow";
 
 export const StatDisplay = ({ player }) => {
   const formattedUrl = `/players/${player.attributes.player.name
     .split(" ")
-    .join("-")}`;
+    .join("_")}`;
 
   return (
     <>
@@ -17,7 +17,7 @@ export const StatDisplay = ({ player }) => {
         </Link>
       </span>
 
-      <StatAttributes attributes={player.attributes} />
+      <StatRow attributes={player.attributes} />
     </>
   );
 };

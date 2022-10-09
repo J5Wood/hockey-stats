@@ -226,15 +226,15 @@ h3 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 5px;
+  row-gap: 20px;
+}
+
+.add-year-column {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .season-data p {
   text-align: center;
-  background: radial-gradient(
-    circle farthest-corner at center,
-    rgba(240, 248, 255, 0.7) 50%,
-    rgba(0, 0, 0, 0.2) 180%
-  );
 }
 
 .season-data span {
@@ -251,6 +251,18 @@ h3 {
   );
   border-top: 1px solid black;
   border-bottom: 1px solid black;
+}
+
+.stats-year-data {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 8px;
+}
+
+.stats-year-data p {
+  margin: 0;
+  /* padding: 5px; */
+  background: none;
 }
 
 .players-container {
