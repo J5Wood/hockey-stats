@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import React from "react";
-import { fetchTeamData } from "./api/TeamActions";
+import { fetchTeamData } from "../api/TeamActions";
 import { useQuery } from "@tanstack/react-query";
 
 export const TeamsPage = () => {

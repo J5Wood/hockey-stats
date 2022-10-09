@@ -2,7 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { PlayerDisplay } from "./PlayerDisplay";
 import { useQuery } from "@tanstack/react-query";
-import { fetchPlayerData } from "./api/PlayerActions";
+import { fetchPlayerData } from "../api/PlayerActions";
 
 export const PlayerPage = () => {
   const name = useLocation().pathname.split("/")[2];

@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { StatRow } from "./StatRow";
+import { StatRow } from "../stats/StatRow";
 
 export const PlayerDisplay = ({ playerData }) => {
   const player = playerData.attributes;

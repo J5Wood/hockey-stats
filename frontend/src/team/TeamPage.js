@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { StatsContainer } from "./StatsContainer";
+import { StatsContainer } from "../stats/StatsContainer";
 import { useQuery } from "@tanstack/react-query";
-import { fetchTeamData } from "./api/TeamActions";
-import { fetchStatData } from "./api/StatActions";
+import { fetchTeamData } from "../api/TeamActions";
+import { fetchStatData } from "../api/StatActions";
 
 export const TeamPage = () => {
   const teams = useQuery(["teams"], () => fetchTeamData());

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { PlayersDisplay } from "./PlayersDisplay";
-import { fetchStatData } from "./api/StatActions";
+import { fetchStatData } from "../api/StatActions";
 import { useQuery } from "@tanstack/react-query";
 
 export const PlayersPage = () => {

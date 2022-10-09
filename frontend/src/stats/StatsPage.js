@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { fetchStatData } from "./api/StatActions";
+import { fetchStatData } from "../api/StatActions";
 import { StatsContainer } from "./StatsContainer";
 import { useQuery } from "@tanstack/react-query";
 
