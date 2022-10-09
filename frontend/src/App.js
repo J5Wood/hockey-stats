@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { NavBar } from "./NavBar";
+import { NavBar } from "./nav/NavBar";
 import { Logo } from "./Logo";
 import { TeamsPage } from "./teams/TeamsPage";
 import { StatsPage } from "./stats/StatsPage";
